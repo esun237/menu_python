@@ -1,0 +1,13 @@
+ID,Name,Age,Major,Department,Units,Uni Loans
+1,Alice Brown,18,Accounting,Finance,12,True
+2,Billy Cooper,19,Commerce,Finance,4,True
+3,Celest Derek,19,Software Engineering,Computer Science,6,False
+4,David Moore,21,Marketing,Business,7,False
+5,Amy Lee,26,Chemical Engineering,Engineering,8,True
+6,Fred White,32,Mechanical Engineering,Engineering,12,True
+7,Gabi Suzy,33,Human Resources,Business,6,False
+8,Isabel Andrew,18,Financial Planning,Finance,4,True
+9,Emma Wang,36,Cloud Technology,Computer Science,11,True
+10,Olivia Henry,26,Teaching,Education,6,True
+11,Henry Li,28,Auditing,Finance,12,False
+12,Amber Lee,18,Accounting,Finance,12,True

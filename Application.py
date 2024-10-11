@@ -4,7 +4,7 @@
 # https://www.youtube.com/watch?v=Z8UEc9L1y_w
 # https://www.w3schools.com/python/ref_keyword_del.asp
 import csv
-
+#define global array
 id_student = []
 name = []
 age = []
@@ -15,11 +15,11 @@ uni_loan = []
 
 
 def load_records():
-    with open("students.csv", mode="r") as file:
-        csvFile = csv.reader(file)
-        next(csvFile)
-        for entry in csvFile:
-            id_student.append(entry[0])
+    with open("students.csv", mode="r") as file: #open csv file as file
+        csvFile = csv.reader(file) #read the file and store it into csvFile
+        next(csvFile) #skip header when reading the file
+        for entry in csvFile: #for each row in csvFile
+            id_student.append(entry[0]) #append 1st element(index[0]) of each row to id_student array
             name.append(entry[1])
             age.append(int(entry[2]))
             major.append(entry[3])
@@ -27,7 +27,9 @@ def load_records():
             units.append(int(entry[5]))
             uni_loan.append(entry[6])
 
+
 def display_records():
+    #print header
     print("{0:10s}".format("ID"),
           "{0:15s}".format("Name"),
           "{0:10s}".format("Age"),
@@ -37,7 +39,8 @@ def display_records():
           "{0:10s}".format("Uni_Loan"),
           )
 
-    for i in range(len(id_student)):
+    for i in range(len(id_student)): #loop i in index[0]-index[11]
+        #print in one line for each student
         print("{0:10s}".format(id_student[i]), end=" ")
         print("{0:15s}".format(name[i]), end=" ")
         print("{0:10d}".format(age[i]), end=" ")
@@ -46,14 +49,17 @@ def display_records():
         print("{0:10d}".format(units[i]), end=" ")
         print("{0:10s}".format(uni_loan[i]))
 
+
 def add_record():
     pass
+
+
 def delete_record():
     # load_records()
     input_id = input("Enter the ID to be deleted: ")
     if input_id in id_student:
-        delete_id = id_student.index(input_id)
-        del id_student[delete_id]
+        delete_id = id_student.index(input_id) #find the index of the id
+        del id_student[delete_id] #delete the index id in parallel arrays
         del name[delete_id]
         del age[delete_id]
         del major[delete_id]
@@ -63,8 +69,11 @@ def delete_record():
         print("Record deleted")
     else:
         print("No such ID exists!")
+
+
 def save_record():
     pass
+
 
 def menu():
     print("Please choose:")
@@ -74,6 +83,8 @@ def menu():
     print("4. Delete records")
     print("5. Save records")
     print("6. Exit")
+
+
 #variable to control the while loop
 my_menu_loop = True
 
@@ -99,5 +110,5 @@ while my_menu_loop:
         save_record()
         print("Records saved")
     else:
-        my_menu_loop=False
+        my_menu_loop=False #end the loop and exit
         print("Exiting the menu")

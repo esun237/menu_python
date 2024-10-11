@@ -87,7 +87,6 @@ def menu():
 
 #variable to control the while loop
 my_menu_loop = True
-
 #create while loop
 while my_menu_loop:
     menu()

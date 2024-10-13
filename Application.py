@@ -1,14 +1,11 @@
 # referencing material:
 # https://stackoverflow.com/questions/46614526/how-to-import-a-csv-file-into-a-data-array
 # https://www.geeksforgeeks.org/reading-csv-files-in-python/
-# https://www.geeksforgeeks.org/python-convert-string-truth-values-to-boolean/
 # https://www.youtube.com/watch?v=Z8UEc9L1y_w
 # https://www.w3schools.com/python/ref_keyword_del.asp
 # https://stackoverflow.com/questions/14257373/how-to-skip-the-headers-when-processing-a-csv-file-using-python
 # https://stackoverflow.com/questions/930397/how-do-i-get-the-last-element-of-a-list
 # https://www.geeksforgeeks.org/writing-csv-files-in-python/
-
-
 
 # Import the csv module to handle CSV file operations
 import csv
@@ -27,8 +24,10 @@ def load_records():
     with open("students.csv", mode="r") as file:
         # Create a CSV reader object to read data from the file
         csv_file = csv.reader(file)
+
         # Skip the header row to avoid including column names in data arrays
         next(csv_file, None)
+
         # Loop through each row (entry) in the CSV file
         for entry in csv_file:
             # Append data from each column of the current row to corresponding lists
@@ -73,6 +72,7 @@ def add_record():
     # if id_student is an empty array, assign 1 to next_id
     else:
         next_id = 1
+
     # Prompt the user to input details for the new student record and store each input
     next_name = input("Name: ")
     next_age = int(input("Age: "))
@@ -95,6 +95,7 @@ def add_record():
 def delete_record():
     # Prompt the user to enter the ID of the record to be deleted
     input_id = int(input("Enter the ID to be deleted: "))
+
     # Check if the entered ID exists in the id_student list
     if input_id in id_student:
         # find the index of the id to be deleted
@@ -117,8 +118,10 @@ def save_record():
     # Open "students.csv" in write mode, specifying no extra newline characters
     with open("students.csv", "w", newline="") as file:
         writer = csv.writer(file)
+
         # Write the header row with column names
         writer.writerow(["ID", "Name", "Age", "Major", "Department", "Units", "Uni Loans"])
+
         # Loop through each student's data by index and write it to the file
         for i in range(len(id_student)):
             # Write the current student's record as a row in the CSV
@@ -138,12 +141,14 @@ def menu():
 
 # variable to control the while loop
 my_menu_loop = True
+
 # create while loop to keep the menu active until the user chooses to exit
 while my_menu_loop:
     # Display the menu options to the user
     menu()
     # Prompt the user to choose an option and convert the input to an integer
     numChosen = int(input("Please choose: "))
+
     # Perform actions based on the user's choice
     if numChosen == 1:
         load_records()

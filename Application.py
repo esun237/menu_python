@@ -10,6 +10,8 @@
 # Import the csv module to handle CSV file operations
 import csv
 # Define global lists to store data for each attribute of student records
+# List to store each column of the csv file
+# These lists are parallel arrays, meaning that the data at index i in each list corresponds to the same student.
 id_student = []
 name = []
 age = []
@@ -43,6 +45,7 @@ def load_records():
 
 def display_records():
     # Print the header row with column names, using formatted strings to set fixed widths for each column
+    # eg.{0:10s} 0: The first argument in the format method, 10: The total width of the field is 10 characters. s: Specifies that the argument is a string.
     print("{0:10s}".format("ID"),
           "{0:15s}".format("Name"),
           "{0:10s}".format("Age"),
@@ -55,6 +58,7 @@ def display_records():
     # Loop through each student's data by index
     for i in range(len(id_student)):
         # Print each student's data on the same line, with formatted spacing for alignment
+        # For formatting, string is left-aligned and integer is right-aligned by default
         # The 'end=""' prevents moving to a new line after each print, keeping all data in one row
         print("{0:10d}".format(id_student[i]), end=" ")
         print("{0:15s}".format(name[i]), end=" ")
@@ -130,6 +134,8 @@ def save_record():
 
 
 def menu():
+    # Display the menu options to the user, guiding them on what actions they can perform
+    # The function prints a simple text-based menu to the console.
     print("Please choose:")
     print("1. Load records")
     print("2. Display records")
@@ -150,6 +156,7 @@ while my_menu_loop:
     numChosen = int(input("Please choose: "))
 
     # Perform actions based on the user's choice
+    # Function Calls Based on User Choice
     if numChosen == 1:
         load_records()
     elif numChosen == 2:

@@ -7,6 +7,8 @@
 # https://stackoverflow.com/questions/930397/how-do-i-get-the-last-element-of-a-list
 # https://www.geeksforgeeks.org/writing-csv-files-in-python/
 
+#Team: Trisha Yan, Emma Sun
+
 # Import the csv module to handle CSV file operations
 import csv
 ''' 

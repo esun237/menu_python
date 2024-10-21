@@ -3,9 +3,11 @@
 # https://stackoverflow.com/questions/46614526/how-to-import-a-csv-file-into-a-data-array
 # https://stackoverflow.com/questions/14257373/how-to-skip-the-headers-when-processing-a-csv-file-using-python
 
+#Team: Trisha Yan, Emma Sun
 
 # Import the csv module to handle CSV file operations
 import csv
+
 ''' 
 Define global lists to store data for each attribute of student records
 List to store each column of the csv file
@@ -58,5 +60,3 @@ for i in range(len(id_student)):
     print("{0:20s}".format(department[i]), end=" ")
     print("{0:10d}".format(units[i]), end=" ")
     print("{0:10s}".format(uni_loan[i]))  # Move to a new line after each student's full record
-
-

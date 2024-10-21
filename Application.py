@@ -9,9 +9,12 @@
 
 # Import the csv module to handle CSV file operations
 import csv
-# Define global lists to store data for each attribute of student records
-# List to store each column of the csv file
-# These lists are parallel arrays, meaning that the data at index i in each list corresponds to the same student.
+''' 
+Define global lists to store data for each attribute of student records
+List to store each column of the csv file
+These lists are parallel arrays, meaning that the data at index i in each list corresponds to the same student.
+'''
+# Initialize lists to store data for each attribute of student records
 id_student = []
 name = []
 age = []
@@ -22,6 +25,7 @@ uni_loan = []
 
 
 def load_records():
+    '''This function is designed to load student data from a CSV file and store the data into several parallel arrays'''
     # open csv file as file in read mode
     with open("students.csv", mode="r") as file:
         # Create a CSV reader object to read data from the file
@@ -44,8 +48,9 @@ def load_records():
 
 
 def display_records():
+    '''This function is designed to print out student records in a formatted table-like structure.'''
     # Print the header row with column names, using formatted strings to set fixed widths for each column
-    # eg.{0:10s} 0: The first argument in the format method, 10: The total width of the field is 10 characters. s: Specifies that the argument is a string.
+    # eg.{0:10s} 0: The first argument in the format method, 10: The total width of the field is 10 characters. s: Specifies that the argument is a string
     print("{0:10s}".format("ID"),
           "{0:15s}".format("Name"),
           "{0:10s}".format("Age"),
@@ -70,7 +75,8 @@ def display_records():
 
 
 def add_record():
-    # if id_student is not an empty array, set next_id to the last ID of id_student list plus 1
+    '''This function is a  preparatory step for adding a new student record, ensuring that each student gets a unique ID'''
+    # if id_student is not an empty array, set next_id to the last ID of id_student list plus 1'''
     if id_student:
         next_id = id_student[-1] + 1
     # if id_student is an empty array, assign 1 to next_id
@@ -97,9 +103,9 @@ def add_record():
 
 
 def delete_record():
+    '''This function allows a user to delete a student record based on a provided student ID'''
     # Prompt the user to enter the ID of the record to be deleted
     input_id = int(input("Enter the ID to be deleted: "))
-
     # Check if the entered ID exists in the id_student list
     if input_id in id_student:
         # find the index of the id to be deleted
@@ -119,6 +125,7 @@ def delete_record():
 
 
 def save_record():
+    '''This function is designed to save the current student records to a CSV file named students.csv'''
     # Open "students.csv" in write mode, specifying no extra newline characters
     with open("students.csv", "w", newline="") as file:
         writer = csv.writer(file)
@@ -134,8 +141,8 @@ def save_record():
 
 
 def menu():
+    '''The function prints a simple text-based menu to the console.'''
     # Display the menu options to the user, guiding them on what actions they can perform
-    # The function prints a simple text-based menu to the console.
     print("Please choose:")
     print("1. Load records")
     print("2. Display records")

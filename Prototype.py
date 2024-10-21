@@ -6,7 +6,11 @@
 
 # Import the csv module to handle CSV file operations
 import csv
-
+''' 
+Define global lists to store data for each attribute of student records
+List to store each column of the csv file
+These lists are parallel arrays, meaning that the data at index i in each list corresponds to the same student.
+'''
 # Initialize lists to store data for each attribute of student records
 id_student = []
 name = []
